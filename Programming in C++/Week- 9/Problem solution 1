@@ -1,0 +1,15 @@
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+
+map<string, int> merge_order(map<string, int> od1, map<string, int> od2){
+    map<string, int> final_od;
+    for (map<string, int>::iterator it = od1.begin(); it != od1.end(); ++it) 
+  
+      final_od[it->first]= it->second;    //LINE-1
+    for (map<string, int>::iterator it = od2.begin(); it != od2.end(); ++it) 
+  
+        final_od[it->first]=final_od[it->first]+it->second;    //LINE-2
+    return final_od;
+}
