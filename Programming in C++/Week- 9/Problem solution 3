@@ -10,17 +10,17 @@ struct Filter{
 };
 
 
-template<class T ,class Pred>  //LINE-1
+template<class T ,class Pred>  //================================================LINE-1
 T find_if(T first, T last, Pred pred) {
 
-    while (first<last && !pred(*first)) ++first;    //LINE-2
+    while (first<last && !pred(*first)) ++first;  //=============================LINE-2
 
         return first;
 }
 
 void printAllFiltered(vector<int> iVec, int lb, int ub){
     Filter<int> f(lb, ub);
-    auto p=iVec.begin();    //LINE-3
+    auto p=iVec.begin();    //===================================================LINE-3
 
     while(p != iVec.end()){
         cout << *p << " ";
