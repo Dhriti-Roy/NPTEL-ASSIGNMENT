@@ -1,0 +1,5 @@
+bool operator()(const employee& e1, const employee& e2) const {return e1.getName() < e2.getName();} //code-segment-1
+
+
+
+bool operator()(const employee& e1, const employee& e2) const {return e1.getSalary() < e2.getSalary();} //code-segment-2
