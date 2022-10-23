@@ -1,0 +1,30 @@
+template <class T, int N>
+class ArrayList
+{
+private:
+    T *values;
+
+public:
+    ArrayList(T _values[]) : values(_values) {}
+    void print()
+    {
+        for (int i = 0; i < N; i++)
+        {
+            cout << values[i] << ", ";
+        }
+    }
+    bool search(T key);
+};
+
+template <class T, int N>
+bool ArrayList<T, N>::search(T key)
+{
+    for (int i = 0; i < N; i++)
+    {
+        if (values[i] == key)
+        {
+            return true;
+        }
+    }
+    return false;
+}
