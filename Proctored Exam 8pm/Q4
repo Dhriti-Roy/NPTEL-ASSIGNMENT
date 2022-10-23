@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+class manager;                    // LINE-1
+class customer {
+    int _custID;
+    string _custName;
+    int _cibilScore;
+    public:
+        customer(int custID, string custName, int cibilScore) :
+                _custID(custID), _custName(custName), _cibilScore(cibilScore) { }
+
+        void changeScore(int change) const{                     // LINE-2
+
+        
+            const_cast<customer*>(this)->_cibilScore += change;   // LINE-3
+        }
+
+        friend class manager; // LINE-4
+};
