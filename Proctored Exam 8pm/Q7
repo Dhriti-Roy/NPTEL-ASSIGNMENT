@@ -1,0 +1,17 @@
+struct CompResponse
+{
+    bool operator()(const Response &r1, const Response &r2) const
+    {
+        return r1.getName() < r2.getName();
+    }
+};
+
+std::map<char, int> countPoll(const std::vector<Response> &responses)
+{
+    std::map<char, int> cMap;
+    for (auto r : responses)
+    {
+        cMap[r.getOption()]++;
+    }
+    return cMap;
+}
