@@ -1,0 +1,12 @@
+KG Pound::convert(){     // LINE-1 
+    KG wkg(w * conversion_rate);
+    return wkg;
+}
+
+Pound KG::convert(){     // LINE-2 
+    Pound wp(w / conversion_rate);
+    return wp;
+}
+template<class T>     // LINE-3
+T convert(T ob) {    // LINE-4
+    return ob.convert();
